@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Dialogs\" />
-    <Folder Include="Views\Pages\" />
   </ItemGroup>
 
   <ItemGroup>
