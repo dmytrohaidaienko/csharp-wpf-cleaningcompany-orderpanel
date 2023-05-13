@@ -53,12 +53,12 @@
                             Orientation="Vertical"
                             VerticalAlignment="Center">
                             <TextBlock 
-                                Text="Name Surname"
+                                Text="{Binding Path=UserFullName}"
                                 FontSize="14"
                                 FontWeight="Medium"
                                 Foreground="#192A3E"/>
                             <TextBlock
-                                Text="email@example.com"
+                                Text="{Binding Path=UserEmail}"
                                 TextWrapping="Wrap"
                                 FontSize="11"
                                 FontWeight="Medium"

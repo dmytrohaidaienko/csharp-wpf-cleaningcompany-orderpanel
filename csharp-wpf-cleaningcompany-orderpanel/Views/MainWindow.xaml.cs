@@ -6,11 +6,15 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(String? currentEmail, String? currentFullName)
         {
             InitializeComponent();
 
-            DataContext = new{};
+            DataContext = new
+            {
+                UserEmail = currentEmail,
+                UserFullName = currentFullName
+            };
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
