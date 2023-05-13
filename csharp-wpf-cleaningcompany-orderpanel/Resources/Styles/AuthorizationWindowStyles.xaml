@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="authorizationWindow_TextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Mulish"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#9FA2B4"/>
+        <Setter Property="Margin" Value="32 24 32 5"/>
+    </Style>
+
+    <Style x:Key="authorizationWindow_TextBox" TargetType="TextBox">
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="Width" Value="316"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Mulish"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Foreground" Value="#252733"/>
+        <Setter Property="CaretBrush" Value="#1195FF"/>
+        <Setter Property="BorderBrush" Value="#1195FF"/>
+        <Setter Property="BorderThickness" Value="0 0 0 2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="32 0 32 0"/>
+    </Style>
+
+    <Style x:Key="authorizationWindow_PasswordBox" TargetType="PasswordBox">
+        <Setter Property="Height" Value="42"/>
+        <Setter Property="Width" Value="316"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Mulish"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Foreground" Value="#252733"/>
+        <Setter Property="CaretBrush" Value="#1195FF"/>
+        <Setter Property="BorderBrush" Value="#1195FF"/>
+        <Setter Property="BorderThickness" Value="0 0 0 2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="32 0 32 0"/>
+    </Style>
+
+    <Style x:Key="authorizationWindow_AuthorizationButton" TargetType="Button">
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Width" Value="316"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontFamily" Value="Mulish"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Background" Value="#1195FF"/>
+        <Setter Property="BorderBrush" Value="#FFFFFF"/>
+        <Setter Property="Margin" Value="0 26 0 10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder" CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="buttonBorder" Value="#33A3FF"/>
+                            <Setter Property="BorderBrush" TargetName="buttonBorder" Value="#33A3FF"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="buttonBorder" Value="#47ACFF"/>
+                            <Setter Property="BorderBrush" TargetName="buttonBorder" Value="#47ACFF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="authorizationWindow_ExitButton" TargetType="Button">
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Width" Value="158"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontFamily" Value="Mulish"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Background" Value="#1E2746"/>
+        <Setter Property="BorderBrush" Value="#FFFFFF"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="buttonBorder" CornerRadius="10" Background="{TemplateBinding Background}" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="buttonBorder" Value="#252F56"/>
+                            <Setter Property="BorderBrush" TargetName="buttonBorder" Value="#252F56"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="buttonBorder" Value="#2B3764"/>
+                            <Setter Property="BorderBrush" TargetName="buttonBorder" Value="#2B3764"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

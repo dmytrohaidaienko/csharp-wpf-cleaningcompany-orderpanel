@@ -8,9 +8,6 @@ using System.Windows;
 
 namespace csharp_wpf_cleaningcompany_orderpanel
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
     }
