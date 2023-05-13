@@ -1,0 +1,118 @@
+﻿<Window x:Class="csharp_wpf_cleaningcompany_orderpanel.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:csharp_wpf_cleaningcompany_orderpanel.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="720" 
+        Width="1100"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary
+            Source="../Resources/Styles/MainWindowStyles.xaml"/>
+    </Window.Resources>
+
+    <Border
+        Background="Transparent"
+        CornerRadius="20"
+        MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Column="0"
+                Background="#FFFFFF"
+                CornerRadius="20 0 0 20">
+                <StackPanel>
+                    <Image 
+                        Source="/Resources/Images/Enterprise/Logo.png"
+                        Width="150"
+                        Margin="0 40 0 40"/>
+                    <Grid Margin="0 0 0 40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            Source="../Resources/Images/Enterprise/ProfileImage.png"
+                            Grid.Column="0"
+                            Height="50"
+                            Width="50"
+                            HorizontalAlignment="Right"
+                            Margin="0 0 10 0"/>
+                        <StackPanel
+                            Grid.Column="1"
+                            Orientation="Vertical"
+                            VerticalAlignment="Center">
+                            <TextBlock 
+                                Text="Name Surname"
+                                FontSize="14"
+                                FontWeight="Medium"
+                                Foreground="#192A3E"/>
+                            <TextBlock
+                                Text="email@example.com"
+                                TextWrapping="Wrap"
+                                FontSize="11"
+                                FontWeight="Medium"
+                                Foreground="#90A0B7"/>
+                        </StackPanel>
+                    </Grid>
+                    <Button
+                        x:Name="DashboardButton"
+                        Click="DashboardButton_Click"
+                        Content="Dashboard"
+                        Style="{StaticResource mainWindow_NavigationButton}"/>
+                    <Button
+                        x:Name="CustomersRequestsButton"
+                        Click="CustomersRequestsButton_Click"
+                        Content="Customers` requests"
+                        Style="{StaticResource mainWindow_NavigationButton}"/>
+                    <Button
+                        x:Name="HandledRequestsButton"
+                        Click="HandledRequestsButton_Click"
+                        Content="Handled Requests"
+                        Style="{StaticResource mainWindow_NavigationButton}"/>
+                    <Button
+                        x:Name="ClosedRequestsButton"
+                        Click="ClosedRequestsButton_Click"
+                        Content="Closed Requests"
+                        Style="{StaticResource mainWindow_NavigationButton}"/>
+                    <Button 
+                        x:Name="ExitButton"
+                        Click="ExitButton_Click"
+                        Content="Exit"
+                        Style="{StaticResource mainWindow_ExitButton}"/>
+                </StackPanel>
+            </Border>
+            <Border
+                Grid.Column="1"
+                CornerRadius="0 20 20 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border
+                        Background="#FFFFFF"
+                        Grid.Row="0"
+                        CornerRadius="0 20 0 0">
+                    </Border>
+                    <Border
+                        Background="#F5F5F5"
+                        Grid.Row="1"
+                        CornerRadius="0 0 20 0">
+                        <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
