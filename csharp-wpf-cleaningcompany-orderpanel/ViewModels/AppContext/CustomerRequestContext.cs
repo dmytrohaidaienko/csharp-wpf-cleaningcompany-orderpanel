@@ -3,9 +3,9 @@ using csharp_wpf_cleaningcompany_orderpanel.Models;
 
 namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
 {
-    class UserContext : DbContext
+    class CustomerRequestContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<CustomerRequest> CustomersRequests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

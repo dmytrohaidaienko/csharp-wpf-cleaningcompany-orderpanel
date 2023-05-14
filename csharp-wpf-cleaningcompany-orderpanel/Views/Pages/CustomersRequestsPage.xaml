@@ -32,27 +32,35 @@
                 CornerRadius="0 0 20 0">
                 <DataGrid 
                     x:Name="CustomersRequests_DataGrid"
+                    ItemsSource="{Binding CustomersRequests}"
                     Style="{DynamicResource customersRequestsPage_DataGrid}"
                     CellStyle="{DynamicResource customersRequestsPage_DataGridCell}"
                     ColumnHeaderStyle="{DynamicResource customersRequestsPage_DataGridColumnHeader}"
                     RowStyle="{DynamicResource customersRequestsPage_DataGridRow}">
                     <DataGrid.Columns>
                         <DataGridTextColumn 
-                            Header="Request ID" 
+                            Header="Request ID"
+                            Binding="{Binding Id}"
                             Width="auto"/>
                         <DataGridTextColumn 
-                            Header="Customer`s full name" 
+                            Header="Customer`s full name"
+                            Binding="{Binding CustomersName}"
                             Width="auto"/>
                         <DataGridTextColumn 
                             Header="Customer`s phone" 
+                            Binding="{Binding CustomersPhone}"
                             Width="auto"/>
                         <DataGridTextColumn 
-                            Header="Customer`s City"/>
+                            Header="City"
+                            Binding="{Binding CustomersCity}"
+                            Width="*"/>
                         <DataGridTextColumn 
-                            Header="Address" 
+                            Header="Address"
+                            Binding="{Binding CustomersAddress}"
                             Width="auto"/>
                         <DataGridTextColumn 
                             Header="Type of place" 
+                            Binding="{Binding CustomersPlace}"
                             Width="auto"/>
                     </DataGrid.Columns>
                     <DataGrid.Resources>
