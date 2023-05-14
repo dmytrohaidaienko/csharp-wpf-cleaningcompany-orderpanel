@@ -8,9 +8,60 @@
       d:DesignWidth="750"
       Title="CustomersRequestsPage">
 
+    <Page.Resources>
+        <ResourceDictionary Source="/Resources/Styles/CustomersRequestsPageStyles.xaml"/>
+    </Page.Resources>
+
     <Border 
         Background="#F5F5F5"
         CornerRadius="0 0 20 0">
-        <TextBlock Text="CustomersRequestsPage"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button 
+                    x:Name="RefreshTableButton"
+                    Click="RefreshTableButton_Click"
+                    Content="Refresh"
+                    Style="{StaticResource customersRequestsPage_Button}"/>
+            </StackPanel>
+            <Border 
+                Grid.Column="1"
+                CornerRadius="0 0 20 0">
+                <DataGrid 
+                    x:Name="CustomersRequests_DataGrid"
+                    Style="{DynamicResource customersRequestsPage_DataGrid}"
+                    CellStyle="{DynamicResource customersRequestsPage_DataGridCell}"
+                    ColumnHeaderStyle="{DynamicResource customersRequestsPage_DataGridColumnHeader}"
+                    RowStyle="{DynamicResource customersRequestsPage_DataGridRow}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn 
+                            Header="Request ID" 
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Customer`s full name" 
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Customer`s phone" 
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Customer`s City"/>
+                        <DataGridTextColumn 
+                            Header="Address" 
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Type of place" 
+                            Width="auto"/>
+                    </DataGrid.Columns>
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridRow">
+                            <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+            </Border>
+        </Grid>
     </Border>
 </Page>
