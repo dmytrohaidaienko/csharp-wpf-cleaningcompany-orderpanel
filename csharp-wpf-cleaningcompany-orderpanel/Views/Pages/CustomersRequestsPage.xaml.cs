@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using csharp_wpf_cleaningcompany_orderpanel.ViewModels;
@@ -32,7 +31,7 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
     }
 }

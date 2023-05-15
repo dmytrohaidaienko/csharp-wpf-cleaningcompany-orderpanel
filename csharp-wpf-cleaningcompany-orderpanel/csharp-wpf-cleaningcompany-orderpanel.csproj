@@ -9,12 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Images\Enterprise\Logo.png" />
-    <None Remove="Resources\Images\Enterprise\ProfileImage.png" />
+    <Compile Remove="Views\Dialogs\**" />
+    <EmbeddedResource Remove="Views\Dialogs\**" />
+    <None Remove="Views\Dialogs\**" />
+    <Page Remove="Views\Dialogs\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Dialogs\" />
+    <None Remove="Resources\Images\Enterprise\Logo.png" />
+    <None Remove="Resources\Images\Enterprise\ProfileImage.png" />
   </ItemGroup>
 
   <ItemGroup>

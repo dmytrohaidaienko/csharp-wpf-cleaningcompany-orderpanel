@@ -35,8 +35,7 @@
                     ItemsSource="{Binding CustomersRequests}"
                     Style="{DynamicResource customersRequestsPage_DataGrid}"
                     CellStyle="{DynamicResource customersRequestsPage_DataGridCell}"
-                    ColumnHeaderStyle="{DynamicResource customersRequestsPage_DataGridColumnHeader}"
-                    RowStyle="{DynamicResource customersRequestsPage_DataGridRow}">
+                    ColumnHeaderStyle="{DynamicResource customersRequestsPage_DataGridColumnHeader}">
                     <DataGrid.Columns>
                         <DataGridTextColumn 
                             Header="Request ID"
@@ -66,6 +65,29 @@
                     <DataGrid.Resources>
                         <Style TargetType="DataGridRow">
                             <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                            <Setter Property="Background" Value="#1E2746"/>
+                            <Setter Property="Foreground" Value="#D1DBE4"/>
+                            <Setter Property="Margin" Value="0 2 0 0"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontFamily" Value="Mulish"/>
+                            <Setter Property="Width" Value="auto"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#33A3FF"/>
+                                    <Setter Property="Foreground" Value="#D1DBE4"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#47ACFF"/>
+                                    <Setter Property="Foreground" Value="#D1DBE4"/>
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsSelected" Value="True"/>
+                                        <Condition Property="Selector.IsSelectionActive" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                </MultiTrigger>
+                            </Style.Triggers>
                         </Style>
                     </DataGrid.Resources>
                 </DataGrid>
