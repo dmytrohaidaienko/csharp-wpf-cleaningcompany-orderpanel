@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using csharp_wpf_cleaningcompany_orderpanel.ViewModels;
+using csharp_wpf_cleaningcompany_orderpanel.Views.Dialog;
 
 namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
 {
@@ -31,7 +32,14 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                var row = e.Source as DataGridRow;
+
+                CustomersRequestsDialog customersRequestsDialog = new CustomersRequestsDialog(row.Item);
+
+                customersRequestsDialog.Show();
+            }
         }
     }
 }

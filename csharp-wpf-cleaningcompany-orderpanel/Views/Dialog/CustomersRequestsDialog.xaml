@@ -1,0 +1,199 @@
+﻿<Window x:Class="csharp_wpf_cleaningcompany_orderpanel.Views.Dialog.CustomersRequestsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="CustomersRequestsDialog" 
+        Height="600" 
+        Width="700"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Resources/Styles/CustomersRequestsDialogStyles.xaml"/>
+    </Window.Resources>
+
+    <Border 
+        Background="Transparent"
+        CornerRadius="20"
+        MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="0"
+                Background="#1E2746"
+                CornerRadius="20 20 0 0">
+                <Ellipse 
+                    x:Name="CloseWindowButton"
+                    MouseLeftButtonDown="CloseWindowButton_MouseLeftButtonDown"
+                    Style="{StaticResource customersRequestsDialog_CloseWindowButton}"/>
+            </Border>
+            <Border 
+                Grid.Row="1"
+                Background="#FFFFFF"
+                CornerRadius="0 0 20 20">
+                <StackPanel
+                    Background="Transparent"
+                    Orientation="Vertical">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Margin="97 67 0 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock 
+                                    Text="Full name:"
+                                    Grid.Column="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"/>
+                                <TextBlock 
+                                    Text="{Binding CustomersName}"                
+                                    Grid.Column="1"
+                                    Style="{StaticResource customersRequestsDialog_DataTextBlock}"/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="55"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock 
+                                    Text="Phone:"
+                                    Grid.Column="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"/>
+                                <TextBlock 
+                                    Text="{Binding CustomersPhone}"                
+                                    Grid.Column="1"
+                                    Style="{StaticResource customersRequestsDialog_DataTextBlock}"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock 
+                                    Text="City:"
+                                    Grid.Column="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"/>
+                                <TextBlock 
+                                    Text="{Binding CustomersCity}"                
+                                    Grid.Column="1"
+                                    Style="{StaticResource customersRequestsDialog_DataTextBlock}"/>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock 
+                                    Text="Address:"
+                                    Grid.Column="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"/>
+                                <TextBlock 
+                                    Text="{Binding CustomersAddress}"                
+                                    Grid.Column="1"
+                                    Style="{StaticResource customersRequestsDialog_DataTextBlock}"/>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="105"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock 
+                                    Text="Type of place:"
+                                    Grid.Column="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"/>
+                                <TextBlock 
+                                    Text="{Binding CustomersPlace}"                
+                                    Grid.Column="1"
+                                    Style="{StaticResource customersRequestsDialog_DataTextBlock}"/>
+                            </Grid>
+                        </Grid>
+                        <Grid 
+                        Grid.Column="1">
+                            <Grid Margin="50 67 0 0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock 
+                                    Text="Enter size (м2):"
+                                    Grid.Row="0"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"
+                                    VerticalAlignment="Bottom"/>
+                                <TextBox
+                                    Grid.Row="1"
+                                    x:Name="SizeTextBox"
+                                    Style="{StaticResource customersRequestsDialog_TextBox}"/>
+                                <TextBlock 
+                                    Text="Enter price:"
+                                    Grid.Row="2"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"
+                                    VerticalAlignment="Bottom"/>
+                                <TextBox 
+                                    Grid.Row="3"
+                                    x:Name="PriceTextBox"
+                                    Style="{StaticResource customersRequestsDialog_TextBox}"/>
+                                <TextBlock 
+                                    Text="Choose date:"
+                                    Grid.Row="4"
+                                    Style="{StaticResource customersRequestsDialog_CategorieTextBlock}"
+                                    VerticalAlignment="Bottom"/>
+                                <Calendar
+                                    Grid.Row="5"
+                                    x:Name="RequestCalendar"
+                                    Style="{DynamicResource customersRequestsDialog_Calendar}"
+                                    CalendarButtonStyle="{DynamicResource customersRequestsDialog_CalendarButton}"
+                                    CalendarDayButtonStyle="{DynamicResource customersRequestsDialog_CalendarDayButton}"
+                                    CalendarItemStyle="{DynamicResource customersRequestsDialog_CalendarItem}"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Margin="0 50 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="124"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button 
+                            Grid.Column="0"
+                            x:Name="RejectButton"
+                            Click="RejectButton_Click"
+                            Content="Reject request"
+                            Style="{StaticResource customersRequestsDialog_Button}"
+                            HorizontalAlignment="Right"/>
+                        <Button 
+                            Grid.Column="2"
+                            x:Name="AddButton"
+                            Click="AddButton_Click"
+                            Content="Add request"
+                            Style="{StaticResource customersRequestsDialog_Button}"
+                            HorizontalAlignment="Left"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
