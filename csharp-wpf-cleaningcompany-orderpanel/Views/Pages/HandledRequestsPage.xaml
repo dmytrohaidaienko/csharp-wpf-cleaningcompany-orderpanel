@@ -8,9 +8,248 @@
       d:DesignWidth="750"
       Title="HandledRequestsPage">
 
-    <Border 
-        Background="#F5F5F5"
-        CornerRadius="0 0 20 0">
-        <TextBlock Text="HandledRequestsPage"/>
+    <Page.Resources>
+        <ResourceDictionary Source="/Resources/Styles/HandledRequestsPageStyles.xaml"/>
+    </Page.Resources>
+
+    <Border Background="#F5F5F5"
+            CornerRadius="0 0 20 0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button 
+                    x:Name="RefreshTableButton"
+                    Click="RefreshTableButton_Click"
+                    Content="Refresh"
+                    Style="{StaticResource handledRequestsPage_Button}"/>
+            </StackPanel>
+            <Border 
+                Grid.Column="1"
+                CornerRadius="0 0 20 0">
+                <DataGrid 
+                    x:Name="HandledRequests_DataGrid" 
+                    AutoGenerateColumns="False"
+                    IsReadOnly="True"
+                    CanUserAddRows="False"
+                    Style="{DynamicResource handledRequestsPage_DataGrid}"
+                    CellStyle="{DynamicResource handledRequestsPage_DataGridCell}"
+                    ColumnHeaderStyle="{DynamicResource handledRequestsPage_DataGridColumnHeader}"
+                    RowStyle="{DynamicResource handledRequestsPage_DataGridRow}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn 
+                            Header="Request ID" 
+                            Binding="{Binding Id}" 
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Customer`s full name" 
+                            Binding="{Binding CustomersName}"
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Requests handled date" 
+                            Binding="{Binding HandledDate}"
+                            Width="auto"/>
+                        <DataGridTextColumn 
+                            Header="Requests appointment date" 
+                            Binding="{Binding AppointmentDate}"
+                            Width="auto"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <Border 
+                                Background="#FFFFFF">
+                                <Grid 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="0 10 0 0"
+                                    Background="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width ="auto"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="ID:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding Id}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Full name:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding CustomersName}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Handled date:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding HandledDate}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="3">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Appointment date:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding AppointmentDate}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="4">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Appartment size (m2):"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding AppartmentSize}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="50"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Customers phone:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding CustomersPhone}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Customers city:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding CustomersCity}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Customers address:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding CustomersAddress}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="3">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Customers type of place:"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding CustomersPlace}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="4">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock 
+                                                Text="Work price (UAH):"
+                                                Grid.Column="0"
+                                                Style="{StaticResource handledRequestsPage_CategorieTextBlock}"/>
+                                            <TextBlock
+                                                Text="{Binding WorkPrice}"                
+                                                Grid.Column="1"
+                                                Style="{StaticResource handledRequestsPage_DataTextBlock}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="5">
+                                            <Button 
+                                                x:Name="CloseRequestButton"
+                                                Click="CloseRequestButton_Click"
+                                                Content="Close request"
+                                                Style="{StaticResource handledRequestsPage_CloseButton}"/>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+            </Border>
+        </Grid>
     </Border>
 </Page>

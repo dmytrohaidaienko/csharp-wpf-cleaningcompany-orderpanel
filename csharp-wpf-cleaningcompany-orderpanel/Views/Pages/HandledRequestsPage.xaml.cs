@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
 {
@@ -7,6 +8,23 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
         public HandledRequestsPage()
         {
             InitializeComponent();
+        }
+
+        private void RefreshTableButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                MessageBox.Show("Fail to refresh or display table!");
+            }
+        }
+
+        private void CloseRequestButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
