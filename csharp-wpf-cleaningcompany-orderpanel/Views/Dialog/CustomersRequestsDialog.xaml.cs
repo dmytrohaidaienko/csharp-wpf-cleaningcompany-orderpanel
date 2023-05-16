@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using csharp_wpf_cleaningcompany_orderpanel.ViewModels;
 
 namespace csharp_wpf_cleaningcompany_orderpanel.Views.Dialog
 {
     public partial class CustomersRequestsDialog : Window
     {
+        private CustomersRequestsDialogViewModel customersRequestsDialogViewModel;
+
         public CustomersRequestsDialog(Object row)
         {
             InitializeComponent();
+            customersRequestsDialogViewModel = new CustomersRequestsDialogViewModel(row);
             DataContext = row;
         }
 
@@ -27,7 +31,7 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Dialog
         {
             try
             {
-
+                customersRequestsDialogViewModel.RejectRequest();
             }
             catch
             {
@@ -39,7 +43,10 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Dialog
         {
             try
             {
-            
+                DateTime todayDate = DateTime.Today.Date;
+                DateTime selectedDate = RequestCalendar.SelectedDate ?? todayDate;
+                customersRequestsDialogViewModel.HandleRequest(SizeTextBox.Text, PriceTextBox.Text, todayDate, selectedDate);
+                MessageBox.Show("Handling request was successful!");
             }
             catch
             {
