@@ -34,6 +34,7 @@
                     AutoGenerateColumns="False"
                     IsReadOnly="True"
                     CanUserAddRows="False"
+                    ItemsSource="{Binding HandledRequests}"
                     Style="{DynamicResource handledRequestsPage_DataGrid}"
                     CellStyle="{DynamicResource handledRequestsPage_DataGridCell}"
                     ColumnHeaderStyle="{DynamicResource handledRequestsPage_DataGridColumnHeader}"
