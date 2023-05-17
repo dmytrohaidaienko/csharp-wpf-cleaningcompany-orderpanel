@@ -34,6 +34,7 @@
                     AutoGenerateColumns="False"
                     IsReadOnly="True"
                     CanUserAddRows="False"
+                    ItemsSource="{Binding ClosedRequests}"
                     Style="{DynamicResource closedRequestsPage_DataGrid}"
                     CellStyle="{DynamicResource closedRequestsPage_DataGridCell}"
                     ColumnHeaderStyle="{DynamicResource closedRequestsPage_DataGridColumnHeader}"
@@ -168,7 +169,6 @@
                                             <RowDefinition Height="25"/>
                                             <RowDefinition Height="25"/>
                                             <RowDefinition Height="25"/>
-                                            <RowDefinition Height="50"/>
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
