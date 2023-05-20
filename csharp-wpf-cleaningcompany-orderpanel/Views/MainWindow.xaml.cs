@@ -20,6 +20,8 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views
                 UserEmail = currentEmail,
                 UserFullName = currentFullName
             };
+            
+            mainViewModel.NavigateToDashboard();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

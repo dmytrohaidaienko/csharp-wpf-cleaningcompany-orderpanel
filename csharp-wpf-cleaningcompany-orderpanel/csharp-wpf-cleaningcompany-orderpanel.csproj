@@ -18,9 +18,16 @@
   <ItemGroup>
     <None Remove="Resources\Images\Enterprise\Logo.png" />
     <None Remove="Resources\Images\Enterprise\ProfileImage.png" />
+    <None Remove="Resources\Images\Interface\Icons\Calendar.png" />
+    <None Remove="Resources\Images\Interface\Icons\Check.png" />
+    <None Remove="Resources\Images\Interface\Icons\HandHoldingMoney.png" />
+    <None Remove="Resources\Images\Interface\Icons\Money.png" />
+    <None Remove="Resources\Images\Interface\Icons\Ruler.png" />
+    <None Remove="Resources\Images\Interface\Icons\TriangleRuler.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.710" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -31,6 +38,12 @@
   <ItemGroup>
     <Resource Include="Resources\Images\Enterprise\Logo.png" />
     <Resource Include="Resources\Images\Enterprise\ProfileImage.png" />
+    <Resource Include="Resources\Images\Interface\Icons\Calendar.png" />
+    <Resource Include="Resources\Images\Interface\Icons\Check.png" />
+    <Resource Include="Resources\Images\Interface\Icons\HandHoldingMoney.png" />
+    <Resource Include="Resources\Images\Interface\Icons\Money.png" />
+    <Resource Include="Resources\Images\Interface\Icons\Ruler.png" />
+    <Resource Include="Resources\Images\Interface\Icons\TriangleRuler.png" />
   </ItemGroup>
 
 </Project>
