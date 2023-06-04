@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Controls;
 using csharp_wpf_cleaningcompany_orderpanel.ViewModels;
 using csharp_wpf_cleaningcompany_orderpanel.Views.Dialog;
 
@@ -27,6 +27,19 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
             catch
             {
                 MessageBox.Show("Fail to refresh or display table!");
+            }
+        }
+
+        private void ExportDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                customersRequestsViewModel.ExportData();
+                MessageBox.Show("Successful data export!");
+            }
+            catch
+            {
+                MessageBox.Show("Error to export data!");
             }
         }
 

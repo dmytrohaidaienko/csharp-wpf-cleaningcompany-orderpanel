@@ -25,6 +25,16 @@
                     Click="RefreshTableButton_Click"
                     Content="Refresh"
                     Style="{StaticResource closedRequestsPage_Button}"/>
+                <Button 
+                    x:Name="ExportDataButton"
+                    Click="ExportDataButton_Click"
+                    Content="Export"
+                    Style="{StaticResource closedRequestsPage_Button}"/>
+                <Button
+                    x:Name="ExportAllDataButton"
+                    Click="ExportAllDataButton_Click"
+                    Content="Export all"
+                    Style="{StaticResource closedRequestsPage_Button}"/>
             </StackPanel>
             <Border 
                 Grid.Column="1"

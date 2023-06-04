@@ -9,6 +9,14 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
 {
     class HandledRequestsViewModel : ViewModelBase
     {
+        private ExportViewModel exportViewModel;
+
+        public HandledRequestsViewModel()
+        {
+            exportViewModel = new ExportViewModel();
+            _ = exportViewModel.FillCollections();
+        }
+
         private ObservableCollection<HandledRequest> handledRequests;
 
         public ObservableCollection<HandledRequest> HandledRequests
@@ -29,6 +37,11 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
                     context.HandledRequests.OrderByDescending(cr => cr.Id).ToList());
                 HandledRequests = new ObservableCollection<HandledRequest>(requests);
             }
+        }
+
+        public void ExportData()
+        {
+            exportViewModel.ExportHandledRequests();
         }
 
         public void CloseRequest(HandledRequest item)

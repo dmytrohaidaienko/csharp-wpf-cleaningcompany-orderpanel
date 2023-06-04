@@ -7,6 +7,14 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
 {
     public class CustomersRequestsViewModel : ViewModelBase
     {
+        private ExportViewModel exportViewModel;
+
+        public CustomersRequestsViewModel()
+        {
+            exportViewModel = new ExportViewModel();
+            _ = exportViewModel.FillCollections();
+        }
+
         private ObservableCollection<CustomerRequest> customersRequests;
         public ObservableCollection<CustomerRequest> CustomersRequests
         {
@@ -26,6 +34,11 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
                     context.CustomersRequests.OrderByDescending(cr => cr.Id).ToList());
                 CustomersRequests = new ObservableCollection<CustomerRequest>(requests);
             }
+        }
+
+        public void ExportData()
+        {
+            exportViewModel.ExportCustomersRequests();
         }
     }
 }

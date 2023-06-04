@@ -30,6 +30,19 @@ namespace csharp_wpf_cleaningcompany_orderpanel.Views.Pages
             }
         }
 
+        private void ExportDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                handledRequestsViewModel.ExportData();
+                MessageBox.Show("Successful data export!");
+            }
+            catch
+            {
+                MessageBox.Show("Error to export data!");
+            }
+        }
+
         private void CloseRequestButton_Click(object sender, RoutedEventArgs e)
         {
             try

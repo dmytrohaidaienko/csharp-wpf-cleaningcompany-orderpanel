@@ -8,6 +8,14 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
 {
     class ClosedRequestsViewModel : ViewModelBase
     {
+        private ExportViewModel exportViewModel;
+
+        public ClosedRequestsViewModel()
+        {
+            exportViewModel = new ExportViewModel();
+            _ = exportViewModel.FillCollections();
+        }
+
         private ObservableCollection<ClosedRequest> closedRequests;
 
         public ObservableCollection<ClosedRequest> ClosedRequests
@@ -28,6 +36,16 @@ namespace csharp_wpf_cleaningcompany_orderpanel.ViewModels
                     context.ClosedRequests.OrderByDescending(cr => cr.Id).ToList());
                 ClosedRequests = new ObservableCollection<ClosedRequest>(requests);
             }
+        }
+
+        public void ExportData()
+        {
+            exportViewModel.ExportClosedRequests();
+        }
+
+        public void ExportAllData()
+        {
+            exportViewModel.GroupAllExports();
         }
     }
 }
